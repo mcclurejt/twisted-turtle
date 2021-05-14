@@ -154,7 +154,7 @@ const Background = () => {
             d="M798.5 1.56082C1541 -26.4392 1662.5 331.561 1662.5 331.561H0C0 331.561 56 29.5608 798.5 1.56082Z"
             fill="#63CB5A"
           />
-          <Tickets dy="1em">
+          <Tickets dy="1em" fill="white">
             <a
               target="_blank"
               href="https://www.eventbrite.com/e/twisted-turtle-festival-2021-tickets-152770575905"
@@ -164,6 +164,7 @@ const Background = () => {
                 id="center-hill-text"
                 href="#center-hill"
                 startOffset="94%"
+                fill="#b35ca4"
               >
                 Tickets
               </TextPath>
