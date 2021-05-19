@@ -1,12 +1,21 @@
 import "./App.css";
 import Desktop from "./components/Desktop";
+import Mobile from "./components/Mobile";
+import { useState, useEffect } from "react";
 
-const App = () => {
-  return (
-    <div className="App">
-      <Desktop />
-    </div>
-  );
-};
+function App() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return document.removeEventListener("resize", handleWindowSizeChange);
+  });
+
+  return <div className="App">{width <= 500 ? <Mobile /> : <Desktop />}</div>;
+}
 
 export default App;
