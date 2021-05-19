@@ -15,7 +15,7 @@ function App() {
     return document.removeEventListener("resize", handleWindowSizeChange);
   });
 
-  return <div className="App">{width <= 500 ? <Mobile /> : <Desktop />}</div>;
+  return <div className="App">{width <= 1000 ? <Mobile /> : <Desktop />}</div>;
 }
 
 export default App;
