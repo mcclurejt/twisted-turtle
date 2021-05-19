@@ -114,7 +114,8 @@ const RedTurtle = styled.img`
 `;
 
 const Dates = styled.img`
-  padding: 4em 4em;
+  padding: 2em 2em;
+  width: 30vh;
 `;
 
 const TextPath = styled.textPath`
