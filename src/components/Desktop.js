@@ -5,6 +5,7 @@ import PresentedSVG from "../svg/presented.svg";
 import TTSVG from "../svg/tt.svg";
 import Lineup from "./Lineup";
 import FAQ from "./FAQ";
+import DatesSVG from "../svg/dates-desktop.svg";
 
 const Container = styled.div`
   position: absolute;
@@ -112,6 +113,10 @@ const RedTurtle = styled.img`
   z-index: 3;
 `;
 
+const Dates = styled.img`
+  padding: 4em 4em;
+`;
+
 const TextPath = styled.textPath`
   z-index: 100;
 `;
@@ -162,6 +167,7 @@ function Desktop() {
           <TitleImage src={TitleSVG}></TitleImage>
           <PresentedBy src={PresentedSVG}></PresentedBy>
           <TT src={TTSVG}></TT>
+          <Dates src={DatesSVG} />
         </div>
         <CenterHill
           width="1663"
