@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import Card from "./Card";
-import { Header } from "./Headers";
+import TitleSVG from "../svg/title.svg";
+import PresentedSVG from "../svg/presented.svg";
+import TTSVG from "../svg/tt.svg";
+import Lineup from "./Lineup";
+import FAQ from "./FAQ";
 
 const Container = styled.div`
   position: absolute;
@@ -10,6 +13,23 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   z-index: -100;
+`;
+
+const TitleImage = styled.img`
+  padding-top: 2vh;
+  width: 75vw;
+`;
+
+const PresentedBy = styled.img`
+  display: block;
+  margin: 0 auto;
+  width: 5vw;
+`;
+
+const TT = styled.img`
+  display: block;
+  margin: 0 auto;
+  width: 20vw;
 `;
 
 const Hill = styled.svg`
@@ -108,21 +128,15 @@ const Tickets = styled(Text)`
   fill: #b35ca4;
 `;
 
-const Lineup = styled(Text)`
+const LineupText = styled(Text)`
   fill: #ff7878;
 `;
 
-const FAQ = styled(Text)`
+const FAQText = styled(Text)`
   fill: #00afba;
 `;
 
-const Overlay = styled(Card)`
-  position: fixed;
-  margin: 10vh auto;
-  width: 60vw;
-`;
-
-const Background = () => {
+function Desktop() {
   const [overlay, setOverlay] = useState("");
 
   const handleClick = (name) => {
@@ -134,15 +148,21 @@ const Background = () => {
     }
   };
 
+  useEffect(() => {
+    document.addEventListener("mousedown", () => handleClick(""), false);
+    return () =>
+      document.removeEventListener("mousedown", () => handleClick(""), false);
+  });
+
   return (
     <>
-      {overlay === "lineup" ? (
-        <Overlay onClick={() => handleClick("")}>
-          <Header>Last Year's Lineup</Header>
-          <button onClick={() => handleClick("")}>Exit</button>
-        </Overlay>
-      ) : null}
+      {overlay === "lineup" ? <Lineup /> : overlay === "faq" ? <FAQ /> : null}
       <Container>
+        <div>
+          <TitleImage src={TitleSVG}></TitleImage>
+          <PresentedBy src={PresentedSVG}></PresentedBy>
+          <TT src={TTSVG}></TT>
+        </div>
         <CenterHill
           width="1663"
           height="400"
@@ -182,7 +202,7 @@ const Background = () => {
             d="M0 0C702 3 1315 227.5 1473.5 477H0V0Z"
             fill="#69EA9D"
           />
-          <Lineup dy="1em">
+          <LineupText dy="1em">
             <TextPath
               id="left-hill-text"
               href="#left-hill"
@@ -193,7 +213,7 @@ const Background = () => {
             >
               Lineup
             </TextPath>
-          </Lineup>
+          </LineupText>
         </LeftHill>
         <RightHill
           width="1616"
@@ -206,7 +226,7 @@ const Background = () => {
             d="M0 355C0 355 457.141 0 1616 0V355H0Z"
             fill="#B6FBC5"
           />
-          <FAQ dy="1em">
+          <FAQText dy="1em">
             <TextPath
               id="right-hill-text"
               href="#right-hill"
@@ -216,7 +236,7 @@ const Background = () => {
             >
               FAQ
             </TextPath>
-          </FAQ>
+          </FAQText>
         </RightHill>
         <Sun
           id="sun-svg"
@@ -306,6 +326,6 @@ const Background = () => {
       </Container>
     </>
   );
-};
+}
 
-export default Background;
+export default Desktop;

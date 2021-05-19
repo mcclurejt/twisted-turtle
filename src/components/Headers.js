@@ -14,6 +14,13 @@ const Title = styled.h1`
 
 const Header = styled.h1`
   font-size: 3em;
+  font-family: "Spicy Rice", cursive;
+  color: #ff7410;
+`;
+
+const Header2 = styled.h2`
+  font-size: 2em;
+  font-family: "Spicy Rice", cursive;
   color: darkslategray;
 `;
 
@@ -23,4 +30,4 @@ const SubHeader = styled.h6`
   color: white;
 `;
 
-export { Title, Header, SubHeader };
+export { Title, Header, Header2, SubHeader };
