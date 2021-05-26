@@ -6,6 +6,7 @@ import TTSVG from "../svg/tt.svg";
 import Lineup from "./Lineup";
 import FAQ from "./FAQ";
 import DatesSVG from "../svg/dates-desktop.svg";
+import Twist from "./Twist";
 
 const Container = styled.div`
   position: absolute;
@@ -162,7 +163,13 @@ function Desktop() {
 
   return (
     <>
-      {overlay === "lineup" ? <Lineup /> : overlay === "faq" ? <FAQ /> : null}
+      {overlay === "lineup" ? (
+        <Lineup />
+      ) : overlay === "faq" ? (
+        <FAQ />
+      ) : overlay === "twist" ? (
+        <Twist />
+      ) : null}
       <Container>
         <div>
           <TitleImage src={TitleSVG}></TitleImage>
@@ -251,6 +258,7 @@ function Desktop() {
           height="100"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
+          onClick={() => handleClick("twist")}
         >
           <path
             id="sun"
