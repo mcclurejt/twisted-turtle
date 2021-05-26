@@ -8,6 +8,8 @@ const StyledOverlay = styled.div`
   margin: 4em auto;
   z-index: 100;
   width: fit-content;
+  height: 80vh;
+  overflow-y: scroll;
 `;
 
 const Overlay = ({ title, children }) => (
