@@ -4,6 +4,11 @@ import Text from "./Text";
 
 const FAQ = () => (
   <Overlay title="FAQ">
+    <Header2>If I bought a ticket for 2020's event, is it valid?</Header2>
+    <Text>
+      Yes, not only is it valid for this event but the next camping event we do
+      as well!
+    </Text>
     <Header2>Where is it?</Header2>
     <Text>
       The venue is located in Mt Zion Illinois 62549. We will send out the exact

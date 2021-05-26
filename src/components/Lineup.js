@@ -9,9 +9,14 @@ const LineupImg = styled.img`
 const Lineup = () => (
   <Overlay title="2021 Lineup">
     <Header2>To Be Determined...</Header2>
+    <Header>2020 Lineup</Header>
+    <LineupImg
+      src={process.env.PUBLIC_URL + "lineups/lineup-2020.jpeg"}
+      alt="2020 Lineup"
+    />
     <Header>2019 Lineup</Header>
     <LineupImg
-      src={process.env.PUBLIC_URL + "lineups/2019.jpeg"}
+      src={process.env.PUBLIC_URL + "lineups/lineup-2019.jpeg"}
       alt="2019 Lineup"
     />
   </Overlay>
