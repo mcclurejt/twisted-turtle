@@ -259,6 +259,7 @@ function Desktop() {
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           onClick={() => handleClick("twist")}
+          cursor="pointer"
         >
           <path
             id="sun"
